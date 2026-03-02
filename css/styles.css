@@ -17,3 +17,93 @@ a:hover{text-decoration:underline}
 .badge{border:1px solid #2a355a;color:#9fb2ff;padding:.2rem .5rem;border-radius:999px;font-size:.75rem}
 section{margin:2rem 0}
 pre{white-space:pre-wrap;background:#0f1322;border:1px solid #1e2742;padding:1rem;border-radius:12px}
+
+* === Portada Minimalista Elegante (Hero) === */
+.hero{
+  position: relative;
+  min-height: 92vh;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+}
+
+.hero__bg{
+  position: absolute;
+  inset: 0;
+  background-image: url("/images/01_orion.jpg"); /* Cambia por tu foto */
+  background-size: cover;
+  background-position: center;
+  filter: brightness(0.85) contrast(1.1);
+  z-index: -2;
+}
+
+.hero__overlay{
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    rgba(10,12,20,0.7),
+    rgba(10,12,20,0.3),
+    rgba(10,12,20,0.8)
+  );
+  z-index: -1;
+}
+
+.hero__content{
+  text-align: center;
+  padding: 2rem 1rem;
+  animation: fadeUp 0.8s ease both;
+}
+
+.hero__title{
+  margin: 0;
+  font-size: 3rem;
+  color: var(--fg);
+}
+
+.hero__subtitle{
+  margin: 0 0 1.5rem;
+  font-size: 1.2rem;
+  color: var(--muted);
+}
+
+.btn{
+  display: inline-block;
+  padding: .8rem 1.2rem;
+  border: 1px solid #2a355a;
+  border-radius: 50px;
+  background: rgba(15,19,34,0.5);
+  color: #cfe0ff;
+  text-decoration: none;
+}
+
+.btn:hover{
+  background: rgba(15,19,34,0.7);
+}
+
+.hero__meta{
+  position: absolute;
+  bottom: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: .5rem;
+  color: #9fb2ff;
+  font-size: .8rem;
+}
+.hero__meta span{
+  border: 1px solid #2a355a;
+  padding: .2rem .6rem;
+  border-radius: 50px;
+}
+
+@keyframes fadeUp{
+  from{
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to{
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
